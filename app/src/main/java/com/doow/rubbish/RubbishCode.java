@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Random;
 
 //垃圾代码生成器，包含drawable,layout,string,manifests,java
+
+//使用方法：选中这个文件，右键编译，编译好后通过project方式打开就可以找到生成的代码，不是通过android目录结构
 public class RubbishCode {
     static String packageBase = "com.nrfbahrfaoiiefaafg.matelouts";  //生成java类根包名
 
