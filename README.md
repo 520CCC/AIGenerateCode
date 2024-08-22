@@ -15,3 +15,4 @@ Google Play Store Packaging Tools
 11. SecretCode：字符串加密工具
 12. LU：国际化多语言工具，不是系统方案
 13. build.gradle包含批量修改文件名
+14. 关于上架android,ios,flutter的技术问题，可以联系i384812887@gmail.com或者wechat:tim18158189527，有空会回复
