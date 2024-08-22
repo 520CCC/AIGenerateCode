@@ -7,6 +7,7 @@ Google Play Store Packaging Tools
 3. ProguardGenerateClass: Obfuscated file generator, increasing the difficulty of decompilation
 4. SecretCode: String encryption tool
 5. LU: Internationalization multi-language tool, not a system solution
+6. build.gradle contains batch modification file names
 
 
 
@@ -20,3 +21,5 @@ google play store上包工具
 4，SecretCode：字符串加密工具
 
 5，LU：国际化多语言工具，不是系统方案
+
+6,build.gradle包含批量修改文件名
