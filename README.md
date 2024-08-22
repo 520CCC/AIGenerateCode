@@ -1,5 +1,6 @@
 # AIGenerateCode
 
+---------------Android--------------
 
 Google Play Store Packaging Tools
 1. RubbishCode: Rubbish code generator, including drawable, layout, string, manifests, java
