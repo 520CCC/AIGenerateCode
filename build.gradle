@@ -1,0 +1,31 @@
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        mavenLocal()
+//        maven { url 'https://raw.githubusercontent.com/martinloren/AabResGuard/mvn-repo' }
+
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.5.0'
+        classpath 'com.github.megatronking.stringfog:gradle-plugin:5.0.0'
+        classpath 'com.github.megatronking.stringfog:xor:5.0.0'
+
+
+//        classpath "com.bytedance.android:aabresguard-plugin:0.1.10"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        mavenLocal()
+    }
+}
+
+
+
+
+

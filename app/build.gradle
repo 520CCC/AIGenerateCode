@@ -1,0 +1,136 @@
+apply plugin: 'com.android.application'
+apply plugin: 'stringfog'
+
+//apply from:'aab_res_proguard.gradle'
+
+stringfog {
+    enable true
+    debug false
+    implementation 'com.github.megatronking.stringfog.xor.StringFogImpl'
+
+}
+
+android {
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.doow.rubbish"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    buildFeatures {
+        buildConfig = true
+    }
+    namespace "com.doow.rubbish"
+    buildToolsVersion '34.0.0'
+
+}
+
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.github.megatronking.stringfog:xor:5.0.0'
+
+}
+
+//替换drawable和layout下面的文件名
+task renameLayoutsAndDrawables {
+    doLast {
+        def run = false; // 打包的时候再开启，不然每次调试构建都会执行
+        if (run) {
+            def layoutDir = file("${projectDir}/src/main/res/layout")
+            def drawableDir = file("${projectDir}/src/main/res/drawable")
+            def javaDir = file("${projectDir}/src/main/java")
+            def random = new Random()
+
+            // 遍历布局文件
+            layoutDir.eachFile { file ->
+                if (file.isFile() && file.name.endsWith(".xml")) {
+
+                    def newLayoutFileName = "l${UUID.randomUUID().toString().replaceAll("-", "")}.xml"
+                    def newLayoutFile = new File(layoutDir, newLayoutFileName)
+                    file.renameTo(newLayoutFile)
+
+                    updateReferencesInFiles(javaDir, file.name.substring(0, file.name.lastIndexOf('.')), newLayoutFileName.substring(0, newLayoutFileName.lastIndexOf('.')))
+                    updateReferencesInFiles(layoutDir, file.name.substring(0, file.name.lastIndexOf('.')), newLayoutFileName.substring(0, newLayoutFileName.lastIndexOf('.')))
+                }
+            }
+
+            drawableDir.eachFile { file ->
+                if (file.isFile() && !file.name.equals("icon.png")) {
+                    def newDrawableFileName = "d${UUID.randomUUID().toString().replaceAll("-", "")}${file.name.substring(file.name.lastIndexOf('.'))}"
+                    def newDrawableFile = new File(drawableDir, newDrawableFileName)
+                    file.renameTo(newDrawableFile)
+
+                    updateReferencesInFiles(drawableDir, file.name.substring(0, file.name.lastIndexOf('.')), newDrawableFileName.substring(0, newDrawableFileName.lastIndexOf('.')))
+                    updateReferencesInFiles(javaDir, file.name.substring(0, file.name.lastIndexOf('.')), newDrawableFileName.substring(0, newDrawableFileName.lastIndexOf('.')))
+                    updateReferencesInFiles(layoutDir, file.name.substring(0, file.name.lastIndexOf('.')), newDrawableFileName.substring(0, newDrawableFileName.lastIndexOf('.')))
+
+                }
+            }
+            modifyMD5Files(drawableDir)
+        }
+    }
+}
+
+//修改引用
+def updateReferencesInFiles(File dir, String oldReference, String newReference) {
+    def fileList = fileTree(dir: dir).toList()
+    fileList.each { file ->
+        if (file.isFile()) {
+            def content = file.text
+            content = content.replaceAll(oldReference, newReference)
+            file.text = content
+        }
+    }
+}
+
+def modifyMD5Files(File directory) {
+    File[] files = directory.listFiles()
+    if (files == null) {
+        return
+    }
+
+    for (File file : files) {
+        if (file.isFile() && !file.name.endsWith(".xml")&& !file.name.equals("icon.png")) {
+            String fileName = file.getName().toLowerCase();
+            modifyMD5File(file)
+        }
+    }
+}
+
+def modifyMD5File(File file) {
+    try {
+        String content = UUID.randomUUID().toString();
+        FileWriter writer = new FileWriter(file, true); // true 表示追加写入
+        writer.write(content);
+        writer.close();
+        println("Modified content of file: " + file.getName());
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
+
+preBuild.dependsOn renameLayoutsAndDrawables
