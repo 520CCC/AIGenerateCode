@@ -8,13 +8,10 @@ Google Play Store Packaging Tools
 4. SecretCode: String encryption tool
 5. LU: Internationalization multi-language tool, not a system solution
 6. build.gradle contains batch modification file names
-
-
-
-google play store上包工具
-1，RubbishCode： 垃圾代码生成器，包含drawable,layout,string,manifests,java
-2，RubbishCodeDoctor： 垃圾代码生成器不用xml,比如layout,，全部用java代码实现
-3，ProguardGenerateClass： 混淆文件生成器，增加反编译难度
-4，SecretCode：字符串加密工具
-5，LU：国际化多语言工具，不是系统方案
-6,build.gradle包含批量修改文件名
+7. google play store上包工具
+8. RubbishCode： 垃圾代码生成器，包含drawable,layout,string,manifests,java
+9. RubbishCodeDoctor： 垃圾代码生成器不用xml,比如layout,，全部用java代码实现
+10. ProguardGenerateClass： 混淆文件生成器，增加反编译难度
+11. SecretCode：字符串加密工具
+12. LU：国际化多语言工具，不是系统方案
+13. build.gradle包含批量修改文件名
