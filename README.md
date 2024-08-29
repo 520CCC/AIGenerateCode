@@ -41,6 +41,6 @@ I have uploaded 100 packages to Google Play using the same code. I would like to
 
 How to use:
 
-1 android In the studio, right-click RubbishCode and select Run 'RubbishCode.main()' in the pop-up box to generate a project containing junk code.
-2 Switch the project structure from android to Project in the upper left corner to find the newly generated source code.
-3 What is generated: java, drawable, layout, strings, AndroidManifest
+* 1 android In the studio, right-click RubbishCode and select Run 'RubbishCode.main()' in the pop-up box to generate a project containing junk code.
+* 2 Switch the project structure from android to Project in the upper left corner to find the newly generated source code.
+* 3 What is generated: java, drawable, layout, strings, AndroidManifest
