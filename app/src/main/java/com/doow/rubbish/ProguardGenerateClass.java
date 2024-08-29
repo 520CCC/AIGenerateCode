@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-//混淆文件生成器，增加反编译难度
+//混淆文件生成器，增加反编译难度，生成的文件：bt-proguard.txt
 public class ProguardGenerateClass {
 
     //字典样本

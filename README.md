@@ -5,13 +5,13 @@
 我用同一个代码上了100个包到google play，分享一些自己实现的工具，面对google的ai机器审核，之前网上找了的都没法用
 
 1. 集成过程操作简单，新手也能操作
-2. 生成代码不但能够编译进aab和apk，还会会被调用，即使开了minifyEnabled true和shrinkResources true
+2. 生成代码不但能够编译进aab和apk，还会被调用，即使开了minifyEnabled true和shrinkResources true
 3. 针对纯java和xml布局分别有两套方案
-4. RubbishCode： 垃圾代码生成器，包含drawable,layout,string,manifests,java
-5. RubbishCodeDoctor： 垃圾代码生成器不用xml,比如layout,，全部用java代码实现
-6. ProguardGenerateClass： 混淆文件生成器，增加反编译难度
-7. SecretCode：字符串加密工具
-8. LU：国际化多语言工具，不是系统方案
+4. RubbishCode： 垃圾代码生成，包含drawable,layout,string,manifests,java
+5. RubbishCodeDoctor： 垃圾代码生成不用xml,比如layout,，全部用java代码实现
+6. ProguardGenerateClass： 混淆文件生成，增加反编译难度
+7. SecretCode：字符串加密
+8. LU：国际化多国语言，不是系统方案
 9. build.gradle包含批量修改文件名
 10. 想加微信群的话：tim18158189527
 
