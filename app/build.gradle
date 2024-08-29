@@ -11,7 +11,7 @@ stringfog {
 }
 
 android {
-    compileSdk 34
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.doow.rubbish"
@@ -36,14 +36,16 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     buildFeatures {
         buildConfig = true
     }
+
+
     namespace "com.doow.rubbish"
-    buildToolsVersion '34.0.0'
+    buildToolsVersion '33.0.2'
 
 }
 

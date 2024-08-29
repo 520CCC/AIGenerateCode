@@ -12,7 +12,7 @@ import java.util.Random;
 
 //使用方法：选中这个文件，右键编译，编译好后通过project方式打开就可以找到生成的代码，不是通过android目录结构
 public class RubbishCode {
-    static String packageBase = "com.nrfbahrfaoiiefaafg.matelouts";  //生成java类根包名
+    static String packageBase = "com.generate.code";  //生成java类根包名
 
     static int packageCount = 20; //生成包数量 30
     static int activityCountPerPackage = 20;  //每个包下生成Activity类数量  30
@@ -62,6 +62,7 @@ public class RubbishCode {
         //所有Activity生成完了
         generateManifest();
     }
+
 
     //普通类
     static List<String> generateClass(String packageName, String className) throws IOException {
