@@ -13,7 +13,7 @@
 7. SecretCode：字符串加密
 8. LU：国际化多国语言，不是系统方案
 9. build.gradle包含批量修改文件名
-10. 想加微信群的话：tim18158189527
+10. 想加微信群的话：Doctor_Gero
 
    使用方法：
 *    1 android studio右键RubbishCode，弹出框里选择 Run 'RubbishCode.main()',就生成了一个包含垃圾代码的项目
