@@ -16,8 +16,11 @@
 10. 想加微信群的话：tim18158189527
 
    使用方法：
+
        1 android studio右键RubbishCode，弹出框里选择 Run 'RubbishCode.main()',就生成了一个包含垃圾代码的项目
+
         2 左上角的项目结构从android切换到Project可以找到刚生成的源码
+   
         3 生成哪些：java,drawable,layout,strings,AndroidManifest
 
 
