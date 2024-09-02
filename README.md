@@ -13,7 +13,7 @@
 7. SecretCode：字符串加密
 8. LU：国际化多国语言，不是系统方案
 9. build.gradle包含批量修改文件名
-10. 想加微信群的话：Doctor_Gero
+10. 微信：Doctor_Gero
 
    使用方法：
 *    1 android studio右键RubbishCode，弹出框里选择 Run 'RubbishCode.main()',就生成了一个包含垃圾代码的项目
@@ -22,6 +22,7 @@
 
 
 ---------------Android--------------English Doc
+
 I have uploaded 100 packages to Google Play using the same code. I would like to share some tools I have implemented to deal with Google's AI machine audit. The tools I found online before could not be used.
 
 1. The integration process is simple and can be operated by novices.
